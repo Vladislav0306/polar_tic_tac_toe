@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Polar Tic Tac Toe</string>
+    <string name="penguins">Penguins</string>
+    <string name="polar_bears">Polar bears</string>
+</resources>
