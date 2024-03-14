@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,8 +32,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
         startService(new Intent(SinglePlayer.this, SoundServicePlay.class));
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_single_player);
-        Toast.makeText(getApplicationContext(), "Choose penguins or polar bears as your icon then" +
-                "click any space on the board to begin", Toast.LENGTH_SHORT).show();
         final RadioGroup rGroup = (RadioGroup) findViewById(R.id.radioGroup);
         final RadioButton penguinRadio = (RadioButton) rGroup.findViewById(R.id.penguinsChoice);
         final RadioButton polarBearRadio = (RadioButton) rGroup.findViewById(R.id.polarBearsChoice);
@@ -154,8 +153,9 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
             moves++;
             if (!checkWinner()) {
                 if (moves == 9) {
-                    Toast.makeText(getApplicationContext(), "No Winner! Click Restart if you " +
-                            "want to play a new game!", Toast.LENGTH_SHORT).show();
+                    TextView v = (TextView) findViewById(R.id.title);
+                    v.setText("No Winner! Click Restart if you want to play a new game!");
+                    v.setTextColor(Color.rgb(255, 252, 64));
                 }
                 makeMove();
                 moves++;
@@ -186,21 +186,25 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                     if ((gameBoard[(i + 1) % 3][j] == gameBoard[i][j]) &&
                             (gameBoard[(i + 2) % 3][j] == gameBoard[i][j])) {
                         if (gameBoard[(i + 1) % 3][j] == 1) {
-                            Toast.makeText(getApplicationContext(), "You are the winner!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You are the winner! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(55, 255, 0));
                         } else {
-                            Toast.makeText(getApplicationContext(), "You Lose. Computer Wins!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(255, 0, 0));
                         }
                         if (gameBoard[(i + 2) % 3][j] == 1) {
-                            Toast.makeText(getApplicationContext(), "You are the winner!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You are the winner! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 1][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 2][j].setBackgroundColor(Color.rgb(55, 255, 0));
                         } else {
-                            Toast.makeText(getApplicationContext(), "You Lose. Computer Wins!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(255, 0, 0));
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 1][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 2][j].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -210,21 +214,25 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                     if ((gameBoard[i][(j + 1) % 3] == gameBoard[i][j]) &&
                             (gameBoard[i][(j + 2) % 3] == gameBoard[i][j])) {
                         if (gameBoard[i][(j + 1) % 3] == 1) {
-                            Toast.makeText(getApplicationContext(), "You are the winner!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You are the winner! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(55, 255, 0));
                         } else {
-                            Toast.makeText(getApplicationContext(), "You Lose. Computer Wins!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(255, 0, 0));
                         }
                         if (gameBoard[i][(j + 2) % 3] == 1) {
-                            Toast.makeText(getApplicationContext(), "You are the winner!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You are the winner! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 1].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 2].setBackgroundColor(Color.rgb(55, 255, 0));
                         } else {
-                            Toast.makeText(getApplicationContext(), "You Lose. Computer Wins!",
-                                    Toast.LENGTH_SHORT).show();
+                            TextView v = (TextView) findViewById(R.id.title);
+                            v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
+                            v.setTextColor(Color.rgb(255, 0, 0));
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 1].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -237,16 +245,16 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                                         (gameBoard[2][2] == gameBoard[i][j]))) {
 
                                     if (gameBoard[i][j] == 1) {
-                                        Toast.makeText(getApplicationContext(),
-                                                "You are the winner!",
-                                                Toast.LENGTH_SHORT).show();
+                                        TextView v = (TextView) findViewById(R.id.title);
+                                        v.setText("You are the winner! Click Restart if you want to play a new game!");
+                                        v.setTextColor(Color.rgb(55, 255, 0));
                                         buttonBoard[0][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                     } else {
-                                        Toast.makeText(getApplicationContext(),
-                                                "You Lose. Computer Wins!",
-                                                Toast.LENGTH_SHORT).show();
+                                        TextView v = (TextView) findViewById(R.id.title);
+                                        v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
+                                        v.setTextColor(Color.rgb(255, 0, 0));
                                         buttonBoard[0][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -259,16 +267,16 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                                         (gameBoard[2][0] == gameBoard[i][j]))) {
 
                                     if (gameBoard[i][j] == 1) {
-                                        Toast.makeText(getApplicationContext(),
-                                                "You are the winner!",
-                                                Toast.LENGTH_SHORT).show();
+                                        TextView v = (TextView) findViewById(R.id.title);
+                                        v.setText("You are the winner! Click Restart if you want to play a new game!");
+                                        v.setTextColor(Color.rgb(55, 255, 0));
                                         buttonBoard[0][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                     } else {
-                                        Toast.makeText(getApplicationContext(),
-                                                "You Lose. Computer Wins!",
-                                                Toast.LENGTH_SHORT).show();
+                                        TextView v = (TextView) findViewById(R.id.title);
+                                        v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
+                                        v.setTextColor(Color.rgb(255, 0, 0));
                                         buttonBoard[0][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][0].setBackgroundColor(Color.rgb(55, 255, 0));

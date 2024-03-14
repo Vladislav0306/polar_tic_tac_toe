@@ -20,6 +20,16 @@
         android:theme="@style/PlayTheme"
         android:background="#FF000DFF">
 
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Choose either penguins or polar bears for the icon of the person to go first"
+            android:gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textColor="#FFBF00"
+            android:textSize="20dp" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -37,7 +47,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#FF00F6FF"
                 android:clickable="true" />
@@ -46,7 +56,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#FF00F6FF" />
             <ImageButton
@@ -55,7 +65,7 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:background="#FF00F6FF" />
 
@@ -142,7 +152,6 @@
                 android:background="#FF00F6FF" />
         </LinearLayout>
 
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -194,7 +203,7 @@
             <Button
                 android:id="@+id/restartBtn"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:onClick="onClickRestart"
                 android:background="@drawable/roundbutton"
                 android:textColor="#FFB2F7"
@@ -205,7 +214,7 @@
             <Button
                 android:id="@+id/backBtn"
                 android:layout_width="160dp"
-                android:layout_height="50dp"
+                android:layout_height="30dp"
                 android:layout_marginLeft="40dp"
                 android:onClick="onClickBack"
                 android:background="@drawable/roundbutton"

@@ -7,5 +7,6 @@
     <color name="grey">#8c8c8c</color>
     <color name="menu">#1417b1</color>
     <color name="play">#FF00F6FF</color>
-    <color name="winner">#37FF00</color>
+    <color name="win">#37FF00</color>
+    <color name="lose">#FF0000</color>
 </resources>
