@@ -150,10 +150,7 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
         public void onClick(View view) {
             buttonBoard[x][y].setImageResource(icon);
             TextView v = (TextView) findViewById(R.id.title);
-            v.setText("Player vs Computer");
-            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-            params.setMargins(300,10,10,10);
-            v.setLayoutParams(params);
+            v.setText("Player vs Computer. Make a move to the free cell");
             buttonBoard[x][y].setEnabled(false);
             gameBoard[x][y] = 1;
             moves++;
@@ -161,8 +158,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                 if (moves == 9) {
                     v.setText("No Winner! Click Restart if you want to play a new game!");
                     v.setTextColor(Color.rgb(255, 252, 64));
-                    params.setMargins(0,10,10,10);
-                    v.setLayoutParams(params);
                 }
                 makeMove();
                 moves++;
@@ -196,24 +191,15 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You are the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                         } else {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                         }
                         if (gameBoard[(i + 2) % 3][j] == 1) {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You are the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 1][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 2][j].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -221,9 +207,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 1][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 2][j].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -236,24 +219,15 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You are the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                         } else {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                         }
                         if (gameBoard[i][(j + 2) % 3] == 1) {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You are the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 1].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -261,9 +235,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
-                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                            params.setMargins(0,10,10,10);
-                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 1].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -274,14 +245,10 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                             if (j == 0) {
                                 if (((gameBoard[1][1] == gameBoard[i][j]) &&
                                         (gameBoard[2][2] == gameBoard[i][j]))) {
-
                                     if (gameBoard[i][j] == 1) {
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("You are the winner! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(55, 255, 0));
-                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                        params.setMargins(0,10,10,10);
-                                        v.setLayoutParams(params);
                                         buttonBoard[0][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -289,9 +256,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(255, 0, 0));
-                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                        params.setMargins(0,10,10,10);
-                                        v.setLayoutParams(params);
                                         buttonBoard[0][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -307,9 +271,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("You are the winner! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(55, 255, 0));
-                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                        params.setMargins(0,10,10,10);
-                                        v.setLayoutParams(params);
                                         buttonBoard[0][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][0].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -317,9 +278,6 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("You Lose. Computer Wins! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(255, 0, 0));
-                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                        params.setMargins(0,10,10,10);
-                                        v.setLayoutParams(params);
                                         buttonBoard[0][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][0].setBackgroundColor(Color.rgb(55, 255, 0));
