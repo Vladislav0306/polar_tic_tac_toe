@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -38,7 +39,6 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
         final RadioButton polarBearRadio = (RadioButton) rGroup.findViewById(R.id.polarBearsChoice);
         rGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             public void onCheckedChanged(RadioGroup group, int checkId) {
-                ;
                 if (checkId == R.id.polarBearsChoice) {
                     penguinRadio.setEnabled(false);
                     oppID = R.drawable.penguin;
@@ -153,10 +153,17 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                 buttonBoard[x][y].setImageResource(icon);
                 whoseTurn = 2;
                 gameBoard[x][y] = 1;
+                TextView v = (TextView) findViewById(R.id.title);
+                v.setText("Player 1 is turn");
+                LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                params.setMargins(350,10,10,10);
+                v.setLayoutParams(params);
             } else {
                 buttonBoard[x][y].setImageResource(oppID);
                 whoseTurn = 1;
                 gameBoard[x][y] = 2;
+                TextView v = (TextView) findViewById(R.id.title);
+                v.setText("Player 2 is turn");
             }
             buttonBoard[x][y].setEnabled(false);
             moves++;
@@ -165,6 +172,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                     TextView v = (TextView) findViewById(R.id.title);
                     v.setText("No Winner! Click Restart if you want to play a new game!");
                     v.setTextColor(Color.rgb(255, 252, 64));
+                    LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                    params.setMargins(0,10,10,10);
+                    v.setLayoutParams(params);
                 }
             } else {
                 for (int i = 0; i < 3; i++) {
@@ -198,15 +208,24 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 1 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                         } else {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 2 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                         }
                         if (gameBoard[(i + 2) % 3][j] == 1) {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 1 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 1][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 2][j].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -214,6 +233,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 2 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 1][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i + 2][j].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -226,15 +248,24 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 1 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                         } else {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 2 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                         }
                         if (gameBoard[i][(j + 2) % 3] == 1) {
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 1 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(55, 255, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 1].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -242,6 +273,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                             TextView v = (TextView) findViewById(R.id.title);
                             v.setText("Player 2 is the winner! Click Restart if you want to play a new game!");
                             v.setTextColor(Color.rgb(255, 0, 0));
+                            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                            params.setMargins(0,10,10,10);
+                            v.setLayoutParams(params);
                             buttonBoard[i][j].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 1].setBackgroundColor(Color.rgb(55, 255, 0));
                             buttonBoard[i][j + 2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -257,6 +291,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("Player 1 is the winner! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(55, 255, 0));
+                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                        params.setMargins(0,10,10,10);
+                                        v.setLayoutParams(params);
                                         buttonBoard[0][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -264,6 +301,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("Player 2 is the winner! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(255, 0, 0));
+                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                        params.setMargins(0,10,10,10);
+                                        v.setLayoutParams(params);
                                         buttonBoard[0][0].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][2].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -279,6 +319,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("Player 1 is the winner! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(55, 255, 0));
+                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                        params.setMargins(0,10,10,10);
+                                        v.setLayoutParams(params);
                                         buttonBoard[0][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][0].setBackgroundColor(Color.rgb(55, 255, 0));
@@ -286,6 +329,9 @@ public class MultiPlayer extends AppCompatActivity implements View.OnTouchListen
                                         TextView v = (TextView) findViewById(R.id.title);
                                         v.setText("Player 2 is the winner! Click Restart if you want to play a new game!");
                                         v.setTextColor(Color.rgb(255, 0, 0));
+                                        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+                                        params.setMargins(0,10,10,10);
+                                        v.setLayoutParams(params);
                                         buttonBoard[0][2].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[1][1].setBackgroundColor(Color.rgb(55, 255, 0));
                                         buttonBoard[2][0].setBackgroundColor(Color.rgb(55, 255, 0));
