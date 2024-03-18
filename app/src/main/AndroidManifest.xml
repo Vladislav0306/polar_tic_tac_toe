@@ -7,21 +7,30 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"
-            android:screenOrientation="portrait"
-            android:exported="true">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".SinglePlayer"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".MultiPlayer" ></activity>
+        <activity
+            android:name=".SinglePlayer"
+            android:screenOrientation="portrait"
+            android:theme="@style/PlayTheme"></activity>
+        <activity
+            android:name=".MultiPlayer"
+            android:theme="@style/PlayTheme"></activity>
 
-        <service android:name=".SoundServiceMenu" android:enabled="true"></service>
-        <service android:name=".SoundServicePlay" android:enabled="true"></service>
+        <service
+            android:name=".SoundServiceMenu"
+            android:enabled="true"></service>
+        <service
+            android:name=".SoundServicePlay"
+            android:enabled="true"></service>
     </application>
 
 </manifest>
