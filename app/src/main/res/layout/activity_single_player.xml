@@ -25,6 +25,7 @@
             android:layout_height="wrap_content"
             android:text="Choose either penguins or polar bears for the icon of the person to go first"
             android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
             android:textStyle="bold"
             android:textColor="#FFBF00"
             android:textSize="20dp" />
