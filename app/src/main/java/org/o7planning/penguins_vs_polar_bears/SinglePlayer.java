@@ -93,6 +93,16 @@ public class SinglePlayer extends AppCompatActivity implements View.OnTouchListe
         soundID = soundPool.load(this, R.raw.play_tab, 1);
     }
 
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus) {
+            View decorView = getWindow().getDecorView();
+            int uiOptions = View.SYSTEM_UI_FLAG_HIDE_NAVIGATION | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            decorView.setSystemUiVisibility(uiOptions);
+        }
+    }
+
     public void onClickRestart(View view) {
         stopService(new Intent(SinglePlayer.this, SoundServicePlay.class));
         Intent intent = new Intent(this, SinglePlayer.class);
